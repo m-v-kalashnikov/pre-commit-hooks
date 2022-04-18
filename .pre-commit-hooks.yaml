@@ -1,5 +1,5 @@
 -   id: go-vet
     name: go vet
     description: Runs `go vet`, requires golang
-    entry: go/vet.sh
+    entry: go-vet.sh
     language: script
