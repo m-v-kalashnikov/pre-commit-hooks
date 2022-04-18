@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+shellcheck "$@"
+
+set -o errexit
+set -o pipefail
+set -o nounset
 
 main() {
-  files=( "$@" )
-  for file in "${files[@]}"; do
-    go vet ./"$file"
-  done
+  go vet "$@"
 }
 
 main "$@"
