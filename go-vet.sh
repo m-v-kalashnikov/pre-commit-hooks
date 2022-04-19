@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-shellcheck "$@"
-
-set -o errexit
-set -o pipefail
-set -o nounset
+set -o errexit   # abort on nonzero exitstatus
+set -o nounset   # abort on unbound variable
+set -o pipefail  # don't hide errors within pipes
 
 main() {
-  go vet "$@"
+  for dir in $(echo "$@"|xargs -n1 dirname|sort -u); do
+    go vet ./"$dir"
+  done
 }
 
 main "$@"
