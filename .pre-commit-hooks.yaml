@@ -1,5 +1,11 @@
+#-   id: go-vet
+#    name: go vet
+#    description: Runs `go vet`, requires golang
+#    entry: go-vet.sh
+#    language: script
 -   id: go-vet
-    name: go vet
-    description: Runs `go vet`, requires golang
+    name: 'go vet'
     entry: go-vet.sh
-    language: script
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `go vet`, requires golang"
