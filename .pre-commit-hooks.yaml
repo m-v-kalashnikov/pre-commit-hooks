@@ -5,7 +5,7 @@
 #    language: script
 -   id: go-vet
     name: 'go vet'
-    entry: go-vet.sh
+    entry: go/vet.sh
     files: '\.go$'
     language: 'script'
     description: "Runs `go vet`, requires golang"
